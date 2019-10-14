@@ -1,5 +1,8 @@
 <script>
     function catGetter(){
+        var deDOM = document.getElementsByTagName("html");
+        console.log(deDOM);
+        
         const request = new XMLHttpRequest();
         const url = 'https://catfact.ninja/fact';
         request.onreadystatechange = function() {
@@ -9,10 +12,19 @@
             }
         }
         request.open("GET", url , true);
-
         request.send();
     }
 </script>
+
+<style>
+    h1{
+        background-color:pink;
+        color:blue;
+    }
+    div{
+        color:red;
+    }
+</style>
 
 <h1>Klik hier onder onder voor een kattenfeitje</h1>
 <input type="button" value="Klik hier voor een kattenfeitje" onclick=catGetter()>
