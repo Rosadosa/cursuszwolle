@@ -1,0 +1,73 @@
+<style>
+    td{
+        border:2px solid red;
+        height:50px;
+        width:50px;
+    }
+    td:hover{
+        background-color:green;
+    }
+
+</style>
+
+<script>
+    function addStone(square){
+        square.style.backgroundColor = "blue";
+    }
+
+    
+
+
+
+</script>
+
+<body>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+        </tr>
+    </table>
+
+</body>
