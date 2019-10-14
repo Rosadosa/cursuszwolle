@@ -1,0 +1,33 @@
+<script>
+	function rekenmachine(){
+		var getal1 = parseInt(document.getElementById("eerstegetal").value);
+		var getal2 = parseInt(document.getElementById("tweedegetal").value);
+		document.getElementById("keer").innerHTML = getal1 * getal2;
+		document.getElementById("plus").innerHTML = getal1 + getal2;
+		document.getElementById("min").innerHTML = getal1 - getal2;
+		document.getElementById("delen").innerHTML = getal1 / getal2;
+		
+	}
+</script>	
+	
+<style>
+	h1{
+		background-color:blue;
+		color:yellow;
+	}
+	h1#keer{
+		background-color:yellow;
+		color:blue;
+	}
+</style>
+
+<h1>Vul een eerste getal in </h1>
+<input type=text id=eerstegetal >
+<h1>Vul een tweede getal in </h1>
+<input type=text id=tweedegetal >	
+
+<h1 onclick="rekenmachine()" id="keer">Vermenigvuldig</h1>
+<h1 onclick="rekenmachine()" id="delen">Delen</h1>
+<h1 onclick="rekenmachine()" id="plus">Plus</h1>
+<h1 onclick="rekenmachine()" id="min">Min</h1>
+

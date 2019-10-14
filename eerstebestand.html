@@ -1,2 +1,29 @@
-<h1>eerste titel</h1>
+<script>
+	function mijnFuctie(){
+		alert();
+		document.getElementById("eenid").innerHTML = "jojo";
+		var getal = document.getElementById("eerstegetal").value;
+		document.getElementById("eenid").innerHTML = getal;
+	}
+</script>
+
+
+<style>
+	h1{
+		background-color:red;
+		color:yellow;
+		align:center;
+	}
+	h1#eenid{
+		background-color:blue;
+	}
+</style>
+
+<h1 align="center">eerste titel met standaard style</h1>
+<h1 align="right" style="background-color:orange">test met override color</h1>
+<h1 onclick="mijnFuctie()" id="eenid">nog een test met een subid</h1>
+
 <h2>tweede titel</h2>
+<input type=text id=eerstegetal > 
+
+<textarea rows = "40" cols = "40" style= "color:green"> Hier gaan we: </textarea>
