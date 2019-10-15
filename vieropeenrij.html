@@ -28,77 +28,86 @@
 
 <script>
     var counter = 0;
+    function addPlayers(){
+        var speler1 = parseInt(document.getElementById("speler1").value);
+        var speler2 = parseInt(document.getElementById("speler2").value);
+        
+    }
 
     function addStone(square){
         var table = document.getElementById("tbl")
         var col = square.cellIndex;
 
         for (var i=table.rows.length-1; i>=0; i--){         
-            {
-                if (table.rows[i].cells[col].style.backgroundColor == 'blue' | table.rows[i].cells[col].style.backgroundColor == 'red'){
-                } else if (counter % 2 == 0){
-                table.rows[i].cells[col].style.backgroundColor = 'blue';
-                counter++;
-                break;
-                } else {
-                table.rows[i].cells[col].style.backgroundColor = 'red';
-                counter++;
-                break;
-                }
-            }    
+            if (table.rows[i].cells[col].style.backgroundColor == 'yellow' | table.rows[i].cells[col].style.backgroundColor == 'red'){
+            } else if (counter % 2 == 0){
+            table.rows[i].cells[col].style.backgroundColor = 'yellow';
+            counter++;
+            break;
+            } else {
+            table.rows[i].cells[col].style.backgroundColor = 'red';
+            counter++;
+            break;
+            }
+               
         }
-        }   
-
-
-
+    }  
 </script>
 
 <body>
+    <h1>Welkom bij vier-op-een-rij!</h1>
+    <div>Naam Speler 1:
+    <input type=text id=speler1> 
+    <div>Naam Speler 2:
+    <input type=text id=speler2>
+    <input type="button" value="Bevestigen" onclick="addPlayers()">
+    </div>
+
     <table id = "tbl">
         <tr class=col0>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
         </tr>
         <tr class=row2>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
         </tr>
         <tr class=row3>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
         </tr>
         <tr class=row4>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
         </tr>
         <tr class=row5>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
-                <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
+            <td onclick="addStone(this)"></td>
         </tr>
         <tr class=row6>
             <td onclick="addStone(this)"></td>
@@ -111,5 +120,7 @@
         </tr>
     </table>
 
-<div>Dit is vier op een rij: </div>
+    <div>
+        <input type="button" value="Reset" onclick="window.location.reload();">
+    </div>
 </body>
