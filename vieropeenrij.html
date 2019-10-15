@@ -1,13 +1,29 @@
 <style>
+    table {
+    border-spacing: 0;
+    overflow: hidden;
+    }
+    
     td{
         border:2px solid red;
         height:50px;
         width:50px;
+        cursor: pointer;
+        padding: 10px;
+        position: relative;
     }
-    td:hover{
-        background-color:green;
-    }
-
+  
+    td:hover::after,
+    .ff-fix:hover::after { 
+    background-color: green;
+    content: '\00a0';  
+    height: 10000px;    
+    left: 0;
+    position: absolute;  
+    top: -5000px;
+    width: 100%;
+    z-index: -1;        
+}
 </style>
 
 <script>
@@ -15,15 +31,22 @@
         square.style.backgroundColor = "blue";
     }
 
-    
-
-
 
 </script>
 
 <body>
     <table>
-        <tr>
+        <colgroup>
+            <col class=col1 span="1">  
+            <col class=col2 span="1">
+            <col class=col3 span="1">
+            <col class=col4 span="1">
+            <col class=col5 span="1">
+            <col class=col6 span="1">
+            <col class=col7 span="1">
+        </colgroup>
+
+        <tr class=row1>
             <td></td>
             <td></td>
             <td></td>
@@ -32,7 +55,7 @@
             <td></td>
             <td></td>
         </tr>
-        <tr>
+        <tr class=row2>
             <td></td>
             <td></td>
             <td></td>
@@ -41,7 +64,7 @@
             <td></td>
             <td></td>
         </tr>
-        <tr>
+        <tr class=row3>
             <td></td>
             <td></td>
             <td></td>
@@ -50,7 +73,7 @@
             <td></td>
             <td></td>
         </tr>
-        <tr>
+        <tr class=row4>
             <td></td>
             <td></td>
             <td></td>
@@ -59,7 +82,16 @@
             <td></td>
             <td></td>
         </tr>
-        <tr>
+        <tr class=row5>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class=row6>
             <td onclick="addStone(this)"></td>
             <td onclick="addStone(this)"></td>
             <td onclick="addStone(this)"></td>
