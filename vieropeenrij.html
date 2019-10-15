@@ -27,69 +27,78 @@
 </style>
 
 <script>
+    var counter = 0;
+
     function addStone(square){
-        square.style.backgroundColor = "blue";
-    }
+        var table = document.getElementById("tbl")
+        var col = square.cellIndex;
+
+        for (var i=table.rows.length-1; i>=0; i--){         
+            {
+                if (table.rows[i].cells[col].style.backgroundColor == 'blue' | table.rows[i].cells[col].style.backgroundColor == 'red'){
+                } else if (counter % 2 == 0){
+                table.rows[i].cells[col].style.backgroundColor = 'blue';
+                counter++;
+                break;
+                } else {
+                table.rows[i].cells[col].style.backgroundColor = 'red';
+                counter++;
+                break;
+                }
+            }    
+        }
+        }   
+
 
 
 </script>
 
 <body>
-    <table>
-        <colgroup>
-            <col class=col1 span="1">  
-            <col class=col2 span="1">
-            <col class=col3 span="1">
-            <col class=col4 span="1">
-            <col class=col5 span="1">
-            <col class=col6 span="1">
-            <col class=col7 span="1">
-        </colgroup>
-
-        <tr class=row1>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+    <table id = "tbl">
+        <tr class=col0>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
         </tr>
         <tr class=row2>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
         </tr>
         <tr class=row3>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
         </tr>
         <tr class=row4>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
         </tr>
         <tr class=row5>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
+                <td onclick="addStone(this)"></td>
         </tr>
         <tr class=row6>
             <td onclick="addStone(this)"></td>
@@ -102,4 +111,5 @@
         </tr>
     </table>
 
+<div>Dit is vier op een rij: </div>
 </body>
