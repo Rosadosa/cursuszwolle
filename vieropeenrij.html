@@ -23,29 +23,57 @@
     top: -5000px;
     width: 100%;
     z-index: -1;        
-}
+    }
+
+    .button_stone {
+        width: 30px;
+        height: 30px;
+    }
 </style>
 
 <script>
+    var player1_col = 0;
+    var player2_col = 0;
     var counter = 0;
+
+    
     function addPlayers(){
-        var speler1 = parseInt(document.getElementById("speler1").value);
-        var speler2 = parseInt(document.getElementById("speler2").value);
-        
-    }
+        document.getElementById("player1").readOnly = true;
+        document.getElementById("player2").readOnly = true;
+
+        var elems = document.getElementsByClassName("button_stone");
+        for(var i = 0; i < elems.length; i++) {
+        elems[i].disabled = true;
+        }
+
+        }
+
+    function pickColor(colorpick, player){
+        if (player == "play1"){
+            player1_col = colorpick;
+            console.log(player1_col);
+        }else {        
+            if (colorpick != player1_col) {
+                player2_col = colorpick;
+                console.log(player2_col);
+                }else{
+                    alert("Speler 1 heeft deze kleur al gekozen! Kies een andere kleur.")
+                }
+        }
+    }    
 
     function addStone(square){
         var table = document.getElementById("tbl")
         var col = square.cellIndex;
 
         for (var i=table.rows.length-1; i>=0; i--){         
-            if (table.rows[i].cells[col].style.backgroundColor == 'yellow' | table.rows[i].cells[col].style.backgroundColor == 'red'){
+            if (table.rows[i].cells[col].style.backgroundColor == player1_col | table.rows[i].cells[col].style.backgroundColor == player2_col){
             } else if (counter % 2 == 0){
-            table.rows[i].cells[col].style.backgroundColor = 'yellow';
+            table.rows[i].cells[col].style.backgroundColor = player1_col;
             counter++;
             break;
             } else {
-            table.rows[i].cells[col].style.backgroundColor = 'red';
+            table.rows[i].cells[col].style.backgroundColor = player2_col;
             counter++;
             break;
             }
@@ -57,9 +85,12 @@
 <body>
     <h1>Welkom bij vier-op-een-rij!</h1>
     <div>Naam Speler 1:
-    <input type=text id=speler1> 
+    <input type=text id=player1> <input type="button" class="button_stone" style="background-color:red" onclick="pickColor('red', 'play1')"> <input type="button" class="button_stone" style="background-color: blue" onclick="pickColor('blue', 'play1')"> <input type="button" class="button_stone" style="background-color:yellow" onclick="pickColor('yellow', 'play1')"> <input type="button" class="button_stone" style="background-color:greenyellow" onclick="pickColor('greenyellow', 'play1')"> 
+
     <div>Naam Speler 2:
-    <input type=text id=speler2>
+    <input type=text id=player2> <input type="button" class="button_stone" style="background-color:red" onclick="pickColor('red', 'play2')"> <input type="button" class="button_stone" style="background-color: blue" onclick="pickColor('blue', 'play2')"> <input type="button" class="button_stone" style="background-color:yellow" onclick="pickColor('yellow', 'play2')"> <input type="button" class="button_stone" style="background-color:greenyellow" onclick="pickColor('greenyellow', 'play2')"> 
+
+    <div>
     <input type="button" value="Bevestigen" onclick="addPlayers()">
     </div>
 
