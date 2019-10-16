@@ -34,8 +34,7 @@
 <script>
     var player1_col = 0;
     var player2_col = 0;
-    var counter = 0;
-
+    var counter_player = 0;
     
     function addPlayers(){
         document.getElementById("player1").readOnly = true;
@@ -62,23 +61,60 @@
         }
     }    
 
+    var colNr = ["","","","","","",""];
+    var rowNr = ["","","","","",""];
+
     function addStone(square){
         var table = document.getElementById("tbl")
         var col = square.cellIndex;
 
         for (var i=table.rows.length-1; i>=0; i--){         
             if (table.rows[i].cells[col].style.backgroundColor == player1_col | table.rows[i].cells[col].style.backgroundColor == player2_col){
-            } else if (counter % 2 == 0){
+                continue;
+            } else if (counter_player % 2 == 0){
             table.rows[i].cells[col].style.backgroundColor = player1_col;
-            counter++;
+            counter_player++;
+            colNr[col]=colNr[col]+"r";
+            //rowNr = rowNr[i].slice(0, [col]) + "r" + rowNr[i].slice([col]);
+            //console.log(rowNr);
+            //rowNr[i]= rowNr[i]+"r";
             break;
             } else {
             table.rows[i].cells[col].style.backgroundColor = player2_col;
-            counter++;
+            counter_player++;
+            colNr[col]=colNr[col]+"b";
+            //rowNr[i]=rowNr[i]+"b";
             break;
             }
-               
+        
         }
+
+        columchecker: for (var k=0; k < colNr.length-1 ;k++){
+            if (colNr[k].length >= 4){
+                if (colNr.find(a =>a.includes("rrrr"))){
+                    alert("player 1 has won");
+                    break columchecker;
+                    } else { (colNr.find(a =>a.includes("bbbb")))
+                        alert("player 2 has won");
+                        break columchecker;
+                    }
+            }
+        }
+
+        for (var k=0; k < rowNr.length-1 ;k++){
+            if (rowNr[k].length >= 4){
+                console.log(rowNr);
+                if (rowNr.find(a =>a.includes("rrrr")))
+                   alert("player 1 has won");
+                   break;
+               if (rowNr.find(a =>a.includes("bbbb")))
+                    alert("player 2 has won");
+                   break;
+            }
+        }
+
+
+
     }  
 </script>
 
